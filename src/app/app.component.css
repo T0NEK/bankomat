@@ -1,0 +1,22 @@
+:host
+{
+    display: flex;
+    flex-direction: row;
+    height:100%;
+    max-height: 100%;
+ }
+.informacje
+{
+    display: flex;
+    height: 100%;
+    min-height: 100%;
+    width: calc(100% - var(--szerokosc_przycisk));
+}
+.przyciski
+{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100%;
+}
+

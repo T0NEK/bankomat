@@ -1,0 +1,14 @@
+:host
+{
+    padding-top: 10vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    font-weight: 600;
+    font-size: 20px;
+    width: 100%;
+}
+h3
+{
+    color: red;
+    padding: 30px;
+}

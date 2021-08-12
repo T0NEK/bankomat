@@ -1,0 +1,5 @@
+<nav>
+  <div class="btn-group-vertical">
+    <button *ngFor="let przycisk of przyciski[miejsce]" type="button" class="btn btn-primary btn-block przycisk" routerLink="/{{przycisk.dzialanie}}" routerLinkActive="active" disabled={{przycisk.dostep}} (click)="click(przycisk.kolejny,przycisk.jezyk)">{{przycisk.tekst[jezyk]}}</button>
+  </div>
+</nav>

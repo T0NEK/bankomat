@@ -1,0 +1,16 @@
+<h4> {{naglowekText}}: </h4>
+<h5> &nbsp;&nbsp; {{wlascicielText}}:<strong> {{osobaImie}} {{osobaNazwisko}}</strong></h5> 
+<h5> &nbsp;&nbsp; {{kontoText}}:<strong> {{osobaKonto}}</strong> </h5>
+<div hidden={{komunikatPobieranie}}> 
+  <h4>
+   {{pobieranieText}}
+  </h4>
+  <div class="progress">
+    <div class="progress-bar bg-{{sukces}}" [style] = (procent)></div>
+  </div>
+ </div> 
+<div hidden={{komunikatSaldo}}>
+  <h4>
+    {{saldoText}}: {{stanKonta | currency :" "}} zł.
+   </h4> 
+</div> 

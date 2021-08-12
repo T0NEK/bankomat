@@ -1,0 +1,11 @@
+.btn-group-vertical
+{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+.przycisk
+    {
+    width: var(--szerokosc_przycisk);
+    height: var(--wysokosc_przycisk);
+    }

@@ -1,0 +1,12 @@
+<h4> {{naglowekText}}: </h4>
+<div class="form-group">
+  <label for="konto">{{kontoTekst}}</label>
+  <input type="text" class="form-control dostep"  id="konto" readonly value={{konto}} (click)="przelacz()">
+</div>
+<div class="form-group">
+  <label for="pin">{{pinTekst}}</label>
+  <input type="password" class="form-control" id="pin" readonly value={{bufor}}>
+</div>
+<div class="klw">
+  <app-numeryczna (bufor)="import($event)"></app-numeryczna>
+</div>

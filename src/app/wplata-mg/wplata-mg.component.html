@@ -1,0 +1,46 @@
+<div id="gora">
+<h4> {{dyspozycjaText}}: </h4>
+<h5> &nbsp;&nbsp; {{wlascicielText}}: <strong>{{osobaImie}} {{osobaNazwisko}}</strong></h5> 
+<h5> &nbsp;&nbsp; {{kontoText}}: <strong>{{osobaKonto}}</strong> </h5>
+<h4> {{kwotaText}}:<strong> {{kwota | currency:" "}} zł </strong></h4>
+</div> 
+<div hidden={{komunikatZero}}> 
+<h3>
+ {{odmowaText}}: {{jednosci | currency:" "}} zł.
+</h3>
+<div class="progress" >
+   <div class="progress-bar" [style] = (procent1)></div>
+ </div>
+</div>
+
+<div hidden={{komunikatWplata}}> 
+   <h4>
+      {{wykonanieText}}: <strong>{{kwota | currency:" "}} zł.</strong>
+   </h4>
+   <div class="progress" >
+      <div class="progress-bar" [style] = (procent1)></div>
+    </div>
+</div>
+<div hidden={{komunikatOdmowa}}> 
+   <h4>
+      {{problemText}}
+   </h4>
+   <div class="progress" >
+      <div class="progress-bar" [style] = (procent1)></div>
+    </div>
+</div>  
+
+<div hidden={{komunikatProgres}}>
+   <h4>
+      {{wtokuText}}
+   </h4>
+<div class="progress" >
+   <div class="progress-bar {{sukces}}" [style] = (procent)></div>
+ </div>
+</div> 
+
+
+ <div class="form-group" hidden={{komunikatMg}}> 
+   <input type="password" class="form-control" id="konto" placeholder="{{kwota | currency:' '}} zł.&nbsp;&#x2192;&nbsp;{{konto}}&nbsp;&nbsp;{{mgText}}" readonly value={{kod}}>
+  </div>
+  

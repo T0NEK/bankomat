@@ -1,0 +1,38 @@
+<div id='gora'>
+<h4> {{naglowekText}}: </h4>
+<h5> &nbsp;&nbsp; {{wlascicielText}}: {{osobaImie}} {{osobaNazwisko}}</h5> 
+<h5> &nbsp;&nbsp; {{kontoText}}: {{osobaKonto}} </h5>
+
+<div> 
+  <h4>
+   {{pobieranieText}}
+  </h4>
+</div>
+ 
+ 
+
+</div>
+<div class="progress"  hidden={{komunikatPobieranie}}>
+  <div class="progress-bar {{sukces}}" [style] = (procent)></div>
+</div>
+
+ <div class="historia" hidden={{komunikatHistoria}} [style]=(wysokosc)>
+  <div class="progress" hidden={{komunikatHistoria}}>
+    <div class="progress-bar progress-bar-success" role="progressbar" style="width:20%" >{{tytulText1}}</div>
+    <div class="progress-bar progress-bar-success" role="progressbar" style="width:40%">{{tytulText2}}</div>
+    <div class="progress-bar progress-bar-success" role="progressbar" style="width:20%">{{tytulText3}}</div>
+    <div class="progress-bar progress-bar-success" role="progressbar" style="width:20%">{{tytulText4}}</div>
+  </div> 
+     <div *ngFor="let pozycja of pozycje; let indeks=index" [ngSwitch]="pozycja.operationType">
+      <span *ngSwitchCase="'PayOut'"><span class="kol20c">{{kierunek.payOut}}</span></span>  
+      <span *ngSwitchCase="'PayIn'"><span class="kol20c">{{kierunek.payIn}}</span></span>  
+      <span *ngSwitchCase="'Out'"><span class="kol20c">{{kierunek.out}}</span></span>  
+      <span *ngSwitchCase="'In'"><span class="kol20c">{{kierunek.in}}</span></span>
+      <span *ngSwitchDefoult><span class="kol1"></span></span>  
+      <span class="kol40l btn-xs btn-outline-warning" placement="top" ngbTooltip="{{((pozycja.operationType == 'Out')||(pozycja.operationType == 'PayOut')) ? odbiorcaText : nadawcaText}} : &nbsp;{{((pozycja.operationType == 'Out')||(pozycja.operationType == 'PayOut')) ? pozycja.toAccount : pozycja.fromAccount}}&nbsp;{{((pozycja.operationType == 'Out')||(pozycja.operationType == 'PayOut')) ? pozycja.toName : pozycja.fromName}}" triggers="click:blur">&nbsp;&nbsp;{{pozycja.description}}</span>
+       <span class="kol20r {{((pozycja.operationType == 'Out')||(pozycja.operationType == 'PayOut')) ? 'red':''}}">{{pozycja.amount | currency:' '}} zł.&nbsp;&nbsp;</span>
+      <span class="kol20r">{{pozycja.accountPostTransaction | currency:' '}} zł.&nbsp;&nbsp;</span>
+    </div>
+ </div>
+
+ 

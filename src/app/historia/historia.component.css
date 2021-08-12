@@ -1,0 +1,45 @@
+:host
+{
+    padding-top: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;   
+    width: 100%;
+}
+:host >>> .tooltip-inner {
+    width: 100%;
+    max-width: 100%;
+  }
+#gora
+{
+   margin-left: 10vw; 
+}
+.historia
+{
+overflow-y: visible;
+overflow-x: hidden;
+}
+.kol20r
+{
+    display: inline-block;
+    width: 20%;
+    min-width: 20%;
+    text-align: right;
+}
+.kol40l
+{
+    display: inline-block;
+    width: 40%;
+    min-width: 40%;
+    text-align: left;
+}
+.kol20c
+{
+    display: inline-block;
+    width: 20%;
+    min-width: 20%;
+    text-align: center;
+}
+.red
+{
+    color: red;
+}

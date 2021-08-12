@@ -1,0 +1,29 @@
+.klw
+{
+    --odstep: 2px;  
+    max-width: calc(15 * var(--wysokosc_przycisk) + 31 * var(--odstep));
+    max-height:calc(4 * var(--wysokosc_przycisk) + 6 * var(--odstep));
+    margin: 20px;
+}
+.cyfra
+{
+  min-width: var(--wysokosc_przycisk);
+  min-height: var(--wysokosc_przycisk);  
+  margin: var(--odstep);
+}
+.cofnij
+{
+  min-width: calc(2 * var(--wysokosc_przycisk) + 2 * var(--odstep));
+  min-height: var(--wysokosc_przycisk);  
+  margin: var(--odstep);
+}
+.spacja
+{
+  min-width: calc(7 * var(--wysokosc_przycisk) + 16 * var(--odstep));
+  min-height: var(--wysokosc_przycisk);  
+  margin: var(--odstep);
+}
+.btn-group-horizontal
+{
+  margin: auto;  
+}

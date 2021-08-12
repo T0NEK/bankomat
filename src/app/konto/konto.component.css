@@ -1,0 +1,20 @@
+:host
+{
+    padding-top: 2vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-size: 20px;
+    width: 100%;
+}
+#gora
+{
+    padding-left: 10vw;   
+}
+.dostep 
+{
+    background-color: rgb(168, 172, 173);
+}
+label
+{
+    padding: 10px;
+}

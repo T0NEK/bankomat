@@ -1,0 +1,30 @@
+:host
+{
+    padding-top: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-size: 20px;
+    width: 100%;
+}
+#gora
+{
+    padding-left: 10vw;   
+}
+.wplata
+{
+    display: flex;
+    flex-direction: row;
+}
+.form-group
+{
+    margin-right: 20px;
+}
+.dostep 
+{
+    background-color: rgb(168, 172, 173);
+}
+
+label,h5
+{
+    padding: 10px;
+}

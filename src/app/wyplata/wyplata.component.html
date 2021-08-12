@@ -1,0 +1,17 @@
+<h4 id="gora"> {{dyspozycjaText}}: </h4>
+<div class="wplata">
+  <div class="form-group">
+  <label for="zloty">{{zlText}} </label>
+  <input type="text" class="form-control {{fokuszlote}}" id="zloty" readonly (click)= "zmienGr()" value = {{zlote}}>
+</div>
+<div class="form-group">
+  <label for="grosze">{{grText}}</label>
+  <input type="text" class="form-control {{fokusgrosze}}"  id="grosze" readonly  value={{grosze}}>
+</div>
+</div>
+<div>
+  <h5>{{kwotaText}}: &nbsp;&nbsp;{{wartosc | currency:' '}} zł.</h5> 
+</div>
+<div class="klw">
+  <app-numeryczna (bufor)="import($event)"></app-numeryczna>
+</div>

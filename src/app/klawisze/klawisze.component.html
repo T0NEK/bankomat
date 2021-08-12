@@ -1,0 +1,67 @@
+<div class="klw">
+  <div class="btn-group-vertical">
+    <div class="btn-group-horizontal">
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div1.innerText)" #div1>{{klwalt ? (' ') : (klwshift ?  '~': '`')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div2.innerText)" #div2>{{klwalt ? (' ') : (klwshift ?  '!': '1')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div3.innerText)" #div3>{{klwalt ? (' ') : (klwshift ?  '@': '2')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div4.innerText)" #div4>{{klwalt ? (' ') : (klwshift ?  '#': '3')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div5.innerText)" #div5>{{klwalt ? (' ') : (klwshift ?  '$': '4')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div6.innerText)" #div6>{{klwalt ? (' ') : (klwshift ?  '%': '5')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div7.innerText)" #div7>{{klwalt ? (' ') : (klwshift ?  '^': '6')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div8.innerText)" #div8>{{klwalt ? (' ') : (klwshift ?  '&': '7')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div9.innerText)" #div9>{{klwalt ? (' ') : (klwshift ?  '*': '8')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div10.innerText)" #div10>{{klwalt ? (' ') : (klwshift ?  '(': '9')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div11.innerText)" #div11>{{klwalt ? (' ') : (klwshift ?  ')': '0')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div12.innerText)" #div12>{{klwalt ? (' ') : (klwshift ?  '_': '-')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div13.innerText)" #div13>{{klwalt ? (' ') : (klwshift ?  '+': '=')}}</div>
+      <div class="btn btn-primary btn-block cofnij" (click)="add('del')">{{cofnij}}</div>
+    </div>
+    <div class="btn-group-horizontal">
+       <div class="btn btn-primary btn-block cofnij" (click)="klwcaps=!klwcaps">CAPS</div>
+       <div class="btn btn-primary btn-block cyfra" (click)="add(div15.innerText)" #div15>{{klwcaps ? (klwalt ?  ' ': 'Q') : (klwalt ?  ' ': 'q')}}</div>
+       <div class="btn btn-primary btn-block cyfra" (click)="add(div16.innerText)" #div16>{{klwcaps ? (klwalt ?  ' ': 'W') : (klwalt ?  ' ': 'w')}}</div>
+       <div class="btn btn-primary btn-block cyfra" (click)="add(div17.innerText)" #div17>{{klwcaps ? (klwalt ?  'Ę': 'E') : (klwalt ?  'ę': 'e')}}</div>
+       <div class="btn btn-primary btn-block cyfra" (click)="add(div18.innerText)" #div18>{{klwcaps ? (klwalt ?  ' ': 'R') : (klwalt ?  ' ': 'r')}}</div>
+       <div class="btn btn-primary btn-block cyfra" (click)="add(div19.innerText)" #div19>{{klwcaps ? (klwalt ?  ' ': 'T') : (klwalt ?  ' ': 't')}}</div>
+       <div class="btn btn-primary btn-block cyfra" (click)="add(div20.innerText)" #div20>{{klwcaps ? (klwalt ?  ' ': 'Y') : (klwalt ?  ' ': 'y')}}</div>
+       <div class="btn btn-primary btn-block cyfra" (click)="add(div21.innerText)" #div21>{{klwcaps ? (klwalt ?  ' ': 'U') : (klwalt ?  ' ': 'u')}}</div>
+       <div class="btn btn-primary btn-block cyfra" (click)="add(div22.innerText)" #div22>{{klwcaps ? (klwalt ?  ' ': 'I') : (klwalt ?  ' ': 'i')}}</div>
+       <div class="btn btn-primary btn-block cyfra" (click)="add(div23.innerText)" #div23>{{klwcaps ? (klwalt ?  'Ó': 'O') : (klwalt ?  'ó': 'o')}}</div>
+       <div class="btn btn-primary btn-block cyfra" (click)="add(div24.innerText)" #div24>{{klwcaps ? (klwalt ?  ' ': 'P') : (klwalt ?  ' ': 'p')}}</div>
+       <div class="btn btn-primary btn-block cyfra" (click)="add(div25.innerText)" #div25>{{klwalt ? (' ')  : (klwshift ?  '{': '[')}}</div>
+       <div class="btn btn-primary btn-block cyfra" (click)="add(div26.innerText)" #div26>{{klwalt ? (' ')  : (klwshift ?  '}': ']')}}</div>
+    </div>
+    <div class="btn-group-horizontal">
+      <div class="btn btn-primary btn-block cofnij" (click)="klwshift = !klwshift; klwcaps = !klwcaps; shiftraz = false">SHIFT</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div27.innerText)" #div27>{{klwcaps ? (klwalt ?  'Ą': 'A') : (klwalt ?  'ą': 'a')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div28.innerText)" #div28>{{klwcaps ? (klwalt ?  'Ś': 'S') : (klwalt ?  'ś': 's')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div29.innerText)" #div29>{{klwcaps ? (klwalt ?  ' ': 'D') : (klwalt ?  ' ': 'd')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div30.innerText)" #div30>{{klwcaps ? (klwalt ?  ' ': 'F') : (klwalt ?  ' ': 'f')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div31.innerText)" #div31>{{klwcaps ? (klwalt ?  ' ': 'G') : (klwalt ?  ' ': 'g')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div32.innerText)" #div32>{{klwcaps ? (klwalt ?  ' ': 'H') : (klwalt ?  ' ': 'h')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div33.innerText)" #div33>{{klwcaps ? (klwalt ?  ' ': 'J') : (klwalt ?  ' ': 'j')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div34.innerText)" #div34>{{klwcaps ? (klwalt ?  ' ': 'K') : (klwalt ?  ' ': 'k')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div35.innerText)" #div35>{{klwcaps ? (klwalt ?  'Ł': 'L') : (klwalt ?  'ł': 'l')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div36.innerText)" #div36>{{klwalt ? (' ') : (klwshift ?  ':':';')}}</div>
+      <div class="btn btn-primary btn-block cyfra" (click)="add(div37.innerText)" #div37>{{klwalt ? (' ') : (klwshift ?  '"':"&#39;")}}</div>
+   </div>
+   <div class="btn-group-horizontal">
+    <div class="btn btn-primary btn-block cofnij" (click)="klwshift = !klwshift; klwcaps = !klwcaps; shiftraz = true">Shift</div>
+    <div class="btn btn-primary btn-block cyfra" (click)="add(div38.innerText)" #div38>{{klwcaps ? (klwalt ?  'Ż': 'Z') : (klwalt ?  'ż': 'z')}}</div>
+    <div class="btn btn-primary btn-block cyfra" (click)="add(div39.innerText)" #div39>{{klwcaps ? (klwalt ?  'Ź': 'X') : (klwalt ?  'ź': 'x')}}</div>
+    <div class="btn btn-primary btn-block cyfra" (click)="add(div40.innerText)" #div40>{{klwcaps ? (klwalt ?  'Ć': 'C') : (klwalt ?  'ć': 'c')}}</div>
+    <div class="btn btn-primary btn-block cyfra" (click)="add(div41.innerText)" #div41>{{klwcaps ? (klwalt ?  ' ': 'V') : (klwalt ?  ' ': 'v')}}</div>
+    <div class="btn btn-primary btn-block cyfra" (click)="add(div42.innerText)" #div42>{{klwcaps ? (klwalt ?  ' ': 'B') : (klwalt ?  ' ': 'b')}}</div>
+    <div class="btn btn-primary btn-block cyfra" (click)="add(div43.innerText)" #div43>{{klwcaps ? (klwalt ?  'Ń': 'N') : (klwalt ?  'ń': 'n')}}</div>
+    <div class="btn btn-primary btn-block cyfra" (click)="add(div44.innerText)" #div44>{{klwcaps ? (klwalt ?  ' ': 'M') : (klwalt ?  ' ': 'm')}}</div>
+    <div class="btn btn-primary btn-block cyfra" (click)="add(div45.innerText)" #div45>{{klwalt ? (' ') : (klwshift ?  '&#60;': ',')}}</div>
+    <div class="btn btn-primary btn-block cyfra" (click)="add(div46.innerText)" #div46>{{klwalt ? (' ') : (klwshift ?  '&#62;': '.')}}</div>
+    <div class="btn btn-primary btn-block cyfra" (click)="add(div47.innerText)" #div47>{{klwalt ? (' ') : (klwshift ?  '?': '/')}}</div>
+ </div>
+ <div class="btn-group-horizontal">
+    <div class="btn btn-primary btn-block cyfra" (click)="klwalt=!klwalt">Alt</div>
+    <div class="btn btn-primary btn-block spacja" (click)="add(div48.innerText)" #div48>&nbsp;</div>
+    <div class="btn btn-primary btn-block cyfra" (click)="klwalt=!klwalt">Alt</div>
+  </div>
+  </div>
+  </div>

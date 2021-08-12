@@ -1,0 +1,29 @@
+:host
+{
+    padding-top: 1vh;
+    padding-left: 10vw;
+    width: 100%;
+}
+.historia
+{
+overflow-y: visible;
+overflow-x: hidden;
+height: 19%;
+max-height: 19%;
+width: 70%;
+max-width: 70%;
+background-color: royalblue;
+}
+input, select
+{
+    width: 70%;
+    max-width: 70%;    
+}
+.btn-group-vertical
+{
+    position: sticky;
+    right: 0px;
+    bottom: 0px;
+}
+
+
