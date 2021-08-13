@@ -18,8 +18,8 @@ private kodMG = '359684drg157wlod';
 private odbiorcaKonto = '';
 private tytul = '';
 private subjectName = new Subject<any>(); 
-//private bankomatURL = 'https://eutanazjalarp.herokuapp.com/api/';
-private bankomatURL = '//192.168.19.107:8080/api/'
+private bankomatURL = 'https://eutanazjalarp.herokuapp.com/api/';
+// private bankomatURL = '//192.168.19.107:8080/api/'
 private czasZwlokiSerwer = 3000;
 
 public miejsca = {
