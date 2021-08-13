@@ -13,13 +13,13 @@ const wyloguj = ['Wyloguj','Log out','Ausloggen','Se déconnecter'];
 const wykonaj = ['Wykonaj','Execute','Ausführen','Effectuer'];
 
 const Jezyki: Przycisk[] = [
-    {kolejny: 1, jezyk: 1, tekst: ['Polski','Polski','Polski','Polski'], dostep:  '', dzialanie: 'konto'},
-    {kolejny: 1, jezyk: 2, tekst: ['English','English','English','English'], dostep: '', dzialanie: 'konto'},
-    {kolejny: 1, jezyk: 3, tekst: ['Deutsche','Deutsche','Deutsche','Deutsche'], dostep: '', dzialanie: 'konto'},
-    {kolejny: 1, jezyk: 4, tekst: ['Français','Français','Français','Français'], dostep: '', dzialanie: 'konto'},
+    {kolejny: 1, jezyk: 1, tekst: ['Polski'], dostep:  '', dzialanie: 'konto'},
+    {kolejny: 1, jezyk: 2, tekst: ['English'], dostep: '', dzialanie: 'konto'},
+    {kolejny: 1, jezyk: 3, tekst: ['Deutsche'], dostep: '', dzialanie: 'konto'},
+    {kolejny: 1, jezyk: 4, tekst: ['Français'], dostep: '', dzialanie: 'konto'},
     {kolejny: 0, jezyk: 1, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
     {kolejny: 0, jezyk: 1, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
-    {kolejny: 0, jezyk: 1, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'}
+    {kolejny: 0, jezyk: 1, tekst: ['Service'], dostep: '', dzialanie: 'konto'}
 ]
 
 const Zaloguj: Przycisk[] = [

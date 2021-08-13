@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Przyciski } from '../dane-przycisk';
 import { ZmienneGlobalneService } from '../ZmienneGlobalne.service';
@@ -8,7 +8,7 @@ import { ZmienneGlobalneService } from '../ZmienneGlobalne.service';
   templateUrl: './przyciski.component.html',
   styleUrls: ['./przyciski.component.css']
 })
-export class PrzyciskiComponent implements OnInit, OnDestroy {
+export class PrzyciskiComponent implements  OnDestroy {
 
   przyciski = Przyciski;
   jezyk : number;
@@ -21,8 +21,6 @@ export class PrzyciskiComponent implements OnInit, OnDestroy {
     this.miejsce = this.zmienne.getMiejsce();
     this.subscriptionName= this.zmienne.getUpdate().subscribe(message => { this.miejsce = this.zmienne.getMiejsce(); });
   }
-
-  ngOnInit() {  }
 
   ngOnDestroy()
   {
