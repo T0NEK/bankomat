@@ -93,38 +93,47 @@ export class WplataMgComponent implements OnInit {
  
 
    @HostListener('window:keydown', ['$event'])
-   handleKeyDown(event: KeyboardEvent) {
-         this.kod = this.kod + (event.key)  
-     if (this.kod == this.zmienne.getKodMG())
+   handleKeyDown(event: KeyboardEvent) 
+   {
+     if (event.key.length == 1 ) 
+        {this.kod = this.kod + (event.key)}
+        else
+        { switch (event.key) {
+          case 'Backspace':
+            this.kod = this.kod.substr(0,this.kod.length - 1); 
+            break;
+          case 'Enter':
+            if (!this.timer)
+            {
+             this.komunikatMg = 'hidden';
+             this.MgOK = false;
+             this.komunikatProgres = '';
+             this.komunikatOdmowa = 'hidden';
+             this.komunikatWplata = 'hidden';
+             this.postep = 0;
+             this.zmienne.setMiejsce(this.zmienne.miejsca.puste);
+             this.zmienne.sendUpdate();
+             this.timer = setInterval(()=>{this.pasek()},100); 
+            };
+            break;  
+          default:
+            break;
+        } }
+    if (this.kod == this.zmienne.getKodMG())
        {
         this.komunikatMg = 'hidden';
         this.MgOK = true;
         this.komunikatProgres = '';
         this.komunikatOdmowa = 'hidden';
         this.komunikatWplata = 'hidden';
+        this.postep = 0;
         if (this.timer) { clearInterval(this.timer) } 
         this.zmienne.setMiejsce(this.zmienne.miejsca.puste);
-        this.zmienne.sendUpdate(); 
-        this.postep = 0;
+        this.zmienne.sendUpdate();
         this.timer = setInterval(()=>{this.pasek()},100); 
         this.wplac(); 
        }
-     else
-     {
-      if (!this.timer)
-      {
-        this.komunikatMg = 'hidden';
-        this.MgOK = false;
-        this.komunikatProgres = '';
-        this.komunikatOdmowa = 'hidden';
-        this.komunikatWplata = 'hidden';
-        this.zmienne.setMiejsce(this.zmienne.miejsca.puste);
-        this.zmienne.sendUpdate(); 
-        this.postep = 0;
-        this.timer = setInterval(()=>{this.pasek()},100); 
-      };
-     }  
-   }
+    }
 
    pasek1()
    {    

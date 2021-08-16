@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -17,6 +17,8 @@ import { HistoriaComponent } from './historia/historia.component';
 import { PrzelewComponent } from './przelew/przelew.component';
 import { PrzelewMgComponent } from './przelew-mg/przelew-mg.component';
 import { StartBANK0MATComponent } from './startBANK0MAT/startBANK0MAT.component';
+import { LogowanieMgComponent } from './logowanie-mg/logowanie-mg.component';
+import { KontaMgComponent } from './konta-mg/konta-mg.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/jezyki', pathMatch: 'full'},
@@ -33,8 +35,10 @@ const appRoutes: Routes = [
   { path: 'stan-konta', component: StanKontaComponent},
   { path: 'historia', component: HistoriaComponent},
   { path: 'przelew', component: PrzelewComponent},
-  { path: 'przelew-mg', component: PrzelewMgComponent}
-];
+  { path: 'przelew-mg', component: PrzelewMgComponent},
+  { path: 'logowanie-mg', component: LogowanieMgComponent},
+  { path: 'konta-mg', component: KontaMgComponent },
+]
 
 
 

@@ -14,13 +14,14 @@ private osobaToken = '';
 private pin = '';
 private kwotaZl = '';
 private kwotaGr = '';
-private kodMG = '359684drg157wlod';
+private kodMG = '112';
 private odbiorcaKonto = '';
 private tytul = '';
 private subjectName = new Subject<any>(); 
 private bankomatURL = 'https://eutanazjalarp.herokuapp.com/api/';
 // private bankomatURL = '//192.168.19.107:8080/api/'
 private czasZwlokiSerwer = 3000;
+private serwis = false;
 
 public miejsca = {
   jezyki: 0,
@@ -35,7 +36,8 @@ public miejsca = {
   przelew: 10,
   przelewmg: 11,
   puste: 12,
-  start: 13
+  start: 13,
+  logowaniemg: 14,
 }
 constructor () 
     {
@@ -70,6 +72,9 @@ getTytul() { return this.tytul; }
 setTytul(dane: string) {this.tytul = dane};
 getURL() { return this.bankomatURL };
 getCzasZwlokiSerwer() { return this.czasZwlokiSerwer};
+getSerwis() { return this.serwis}
+setSerwisOn() { this.serwis = true}
+setSerwisOff() { this.serwis = false}
 
 UstawStart()
 {
@@ -84,7 +89,8 @@ UstawStart()
   this.kwotaZl = '';
   this.kwotaGr = '';
   this.odbiorcaKonto = '';
-  this.tytul = '';  
+  this.tytul = ''; 
+  this.serwis = false; 
 }
 
 sendUpdate() 

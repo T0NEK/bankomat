@@ -24,10 +24,12 @@ import { KlawiszeComponent } from './klawisze/klawisze.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StartBANK0MATComponent } from './startBANK0MAT/startBANK0MAT.component';
+import { LogowanieMgComponent } from './logowanie-mg/logowanie-mg.component';
+import { KontaMgComponent } from './konta-mg/konta-mg.component';
 
 
 @NgModule({
-  declarations: [																								
+  declarations: [																											
     AppComponent,
     StanKontaComponent,
       JezykiComponent,
@@ -46,7 +48,9 @@ import { StartBANK0MATComponent } from './startBANK0MAT/startBANK0MAT.component'
       PrzelewComponent,
       PrzelewMgComponent,
       KlawiszeComponent,
-      StartBANK0MATComponent
+      StartBANK0MATComponent,
+      LogowanieMgComponent,
+      KontaMgComponent
    ],
   imports: [
     BrowserModule,

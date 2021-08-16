@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-startBANK0MAT',
-  templateUrl: './startBANK0MAT.component.html',
-  styleUrls: ['./startBANK0MAT.component.css']
+  selector: 'app-konta-mg',
+  templateUrl: './konta-mg.component.html',
+  styleUrls: ['./konta-mg.component.css']
 })
-export class StartBANK0MATComponent implements OnInit {
+export class KontaMgComponent implements OnInit {
 
   stan = 'czekam';
   stankonta = 'czekam';

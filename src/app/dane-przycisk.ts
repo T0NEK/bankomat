@@ -19,7 +19,7 @@ const Jezyki: Przycisk[] = [
     {kolejny: 1, jezyk: 4, tekst: ['Français'], dostep: '', dzialanie: 'konto'},
     {kolejny: 0, jezyk: 1, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
     {kolejny: 0, jezyk: 1, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
-    {kolejny: 0, jezyk: 1, tekst: ['Service'], dostep: '', dzialanie: 'konto'}
+    {kolejny: 14, jezyk: 1, tekst: ['Service'], dostep: '', dzialanie: 'logowanie-mg'}
 ]
 
 const Zaloguj: Przycisk[] = [
@@ -134,14 +134,25 @@ const Puste: Przycisk[] = [
 ]
 
 const Start: Przycisk[] = [
-    {kolejny: 0, jezyk: 1, tekst: ['Start','Start','Start','Start'], dostep:  '', dzialanie: 'jezyki'},
-    {kolejny: 0, jezyk: 1, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
+    {kolejny: 0, jezyk: 1, tekst: ['Start'], dostep:  '', dzialanie: 'jezyki'},
+    {kolejny: 0, jezyk: 1, tekst: ['Konta'], dostep: '', dzialanie: 'konta-mg'},
     {kolejny: 0, jezyk: 1, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
     {kolejny: 0, jezyk: 1, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
     {kolejny: 0, jezyk: 1, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
     {kolejny: 0, jezyk: 1, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
     {kolejny: 0, jezyk: 1, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'}
 ]
+
+const LogowanieMg: Przycisk[] = [
+    {kolejny: 0, jezyk: 0, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
+    {kolejny: 0, jezyk: 0, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
+    {kolejny: 0, jezyk: 0, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
+    {kolejny: 0, jezyk: 0, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
+    {kolejny: 0, jezyk: 0, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
+    {kolejny: 0, jezyk: 0, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
+    {kolejny: 0, jezyk: 0, tekst: anuluj, dostep: '', dzialanie: 'jezyki'}
+]
+
 
 export const Przyciski: Array<any> = [
     Jezyki, //0
@@ -157,7 +168,8 @@ export const Przyciski: Array<any> = [
     Przelew,  //10
     PrzelewMg, //11
     Puste,  //12
-    Start //13
+    Start, //13
+    LogowanieMg, //14
 ]
 
 
