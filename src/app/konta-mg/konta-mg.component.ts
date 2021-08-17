@@ -14,10 +14,11 @@ import { Router } from '@angular/router';
 export class KontaMgComponent implements OnInit {
 
   stankonta = 'czekam';
+  filtrKontaOk = '';
   pozycje: any;
   konta = Rachunki;
-  tabelaBrak: Array<any> = [];
-  tabelaDodatkowe: Array<any> = [];
+  tabelaBrak: Array<{imie: string, nazwisko: string, debet: number, saldo: number}> = [];
+  tabelaDodatkowe: Array<{imie: string, nazwisko: string, debet: number, saldo: number}> = [];
   tabelaOk: Array<{imie: string, nazwisko: string, debet: number, saldo: number}> = [];
   
  
@@ -55,13 +56,12 @@ for (let index_dane = 0; index_dane < this.konta.length; index_dane++)
       const el_baza = this.pozycje[index_baza];
       if (el_dane.account == el_baza.account) 
         { jest = true;
-          //this.tabelaOk.push(' konto: ' + el_dane.firstName + ' ' + el_dane.lastName + '; możliwy debet = ' + el_baza.debt + '; stan = ' + el_baza.money +' zł.' );
           this.tabelaOk.push({imie: el_dane.firstName, nazwisko: el_dane.lastName, debet: el_dane.debt, saldo: el_dane.money})
           break 
         }
     }
     if (!jest)
-     { this.tabelaBrak.push([' konto: ' + el_dane.firstName + ' ' + el_dane.lastName, index_dane] )}
+     { this.tabelaBrak.push({imie: el_dane.firstName, nazwisko: el_dane.lastName, debet: el_dane.debt, saldo: el_dane.money} )}
   } 
   this.tabelaDodatkowe.splice(0);
 for (let index_dane = 0; index_dane < this.pozycje.length; index_dane++) 
@@ -77,13 +77,13 @@ for (let index_dane = 0; index_dane < this.pozycje.length; index_dane++)
         }
     }
     if (!jest)
-     { this.tabelaDodatkowe.push([' konto: ' + el_dane.account + ' dla: ' + el_dane.firstName + ' ' + el_dane.lastName+ '; możliwy debet = ' + el_dane.debt + '; stan = ' + el_dane.money +' zł.', index_dane] )}
+     { this.tabelaDodatkowe.push( {imie: el_dane.firstName, nazwisko: el_dane.lastName, debet: el_dane.debt, saldo: el_dane.money} )}
   } 
-console.log( this.tabelaOk)
 }
 
 GetKonta()
 {
+  this.stankonta = 'wczytuję';
   const header = {
     'Content-Type': 'application/json',
     'accept': 'application/json',
@@ -97,13 +97,12 @@ const instance = axios.create({
 instance.get( '/accounts'
  ).then(response => {
   this.pozycje = response.data;
-  console.log(this.pozycje)
   this.stankonta = 'wczytane';
   this.SprawdzKonta();
   })
   .catch(error => { 
   console.log(error)      
-  this.stankonta = 'problem' + error;  
+  this.stankonta = 'problem ' + error;  
      }
   );
 }
