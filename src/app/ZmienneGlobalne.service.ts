@@ -23,6 +23,7 @@ private bankomatURL = 'https://eutanazjalarp.herokuapp.com/api/';
 private czasZwlokiSerwer = 3000;
 private serwis = false;
 
+
 public miejsca = {
   jezyki: 0,
   konto: 1,

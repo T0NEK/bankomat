@@ -19,9 +19,27 @@ input, select
     width: 70%;
     max-width: 70%;    
 }
-.btn-group-vertical
+.naglowek
 {
-    position: sticky;
-    right: 0px;
-    bottom: 0px;
+    width: 70%;
+    max-width: 70%;
+    background-color: royalblue;
+}
+.naglowki
+{
+    text-align: center;
+    display: inline-block;
+}
+.linia
+{
+    display: inline-block;
+}
+.linia1
+{
+width: 40%;
+}
+.linia2
+{
+width: 15%;
+text-align: right;
 }

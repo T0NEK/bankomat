@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 })
 export class StartBANK0MATComponent implements OnInit {
 
+  widocznoscKonta = 'hidden'
+
   stan = 'czekam';
   stankonta = 'czekam';
   zakladamkonta = 'czekam';

@@ -1,10 +1,15 @@
 <div (click)="GetKonta();" > <strong>Konta:</strong> {{stankonta}} </div>
 <div>Konta w Bazie</div>
+  <div class="naglowek">
+    <div class="naglowki linia1">KONTO </div>
+    <div class="naglowki linia2">SALDO </div>
+  </div>  
   <div class="historia">
-  <div *ngFor="let pozycja of tabelaOk" >
-   <div>{{pozycja}}</div>
+    <div *ngFor="let pozycje of tabelaOk">
+      <div class="linia linia1">{{pozycje.imie}} {{pozycje.nazwisko}} </div>
+      <div class="linia linia2">{{pozycje.saldo}}</div>
   </div>
-</div>
+  </div>
 <div>Konta Brakujące</div>
   <div class="historia">
   <div *ngFor="let pozycja of tabelaBrak" >

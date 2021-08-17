@@ -1,25 +1,7 @@
-<app-konta-mg></app-konta-mg>
+
 
 <div> <strong>Logowanie:</strong> {{stan}} </div>
-<div (click)="GetKonta();" > <strong>Konta:</strong> {{stankonta}} </div>
-<div>Konta w Bazie</div>
-  <div class="historia">
-  <div *ngFor="let pozycja of tabelaOk" >
-   <div>{{pozycja}}</div>
-  </div>
-</div>
-<div>Konta Brakujące</div>
-  <div class="historia">
-  <div *ngFor="let pozycja of tabelaBrak" >
-   <div>{{pozycja[0]}}</div>
-  </div>
-</div>
-<div>Konta Nadplanowe</div>
-  <div class="historia">
-  <div *ngFor="let pozycja of tabelaDodatkowe" >
-   <div>{{pozycja[0]}}</div>
-  </div>
-</div>
+
 <div (click)="DodajKonta()"> <strong>Dodaj konta:</strong> {{zakladamkonta}} </div>
 <div>NOWE KONTO</div>
 Imię <input type="text" class="form-control"  #FN (keyup)="onKeyFN(FN.value)">
