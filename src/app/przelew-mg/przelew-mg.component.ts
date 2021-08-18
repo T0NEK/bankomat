@@ -204,10 +204,10 @@ AddRachunek()
      'Authorization': 'Bearer ' + this.zmienne.getOsobaToken() 
   }
   const data = {
-    "firstName": "????????",
-    "lastName": "????",
+    "firstName": "brak danych",
+    "lastName": "brak danych",
     "password": "5856",
-    "username": this.zmienne.getOdbiorcaKonto(),
+    "username": 'założył: ' + this.zmienne.getOsobaNazwisko() + ' ' + this.zmienne.getOsobaNazwisko,
     "account": this.zmienne.getOdbiorcaKonto(),
     "money": 0,
     "debt": 0

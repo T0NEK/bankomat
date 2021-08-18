@@ -41,6 +41,11 @@ export const Rachunki: Konto[] =
 
 { firstName: 'Państwo', lastName: "Price", password: '5856', username: '6935332862458897', account: '6935332862458897', money: 173.50, debt: 0},
 { firstName: 'Monika', lastName: 'Klin', password: '5856', username: '4458629712311548', account: '4458629712311548', money: 0, debt: 0},
-{ firstName: 'Agencja', lastName: 'Afrodyta', password: '5856', username: '1244586154829731', account: '1244586154829731', money: 0, debt: 0},
+{ firstName: 'Agencja', lastName: 'Afrodyta', password: '5856', username: '1244586154829731', account: '12445861548297341', money: 0, debt: 0},
+{ firstName: 'Agencja2', lastName: 'Afrodyta', password: '5856', username: '12445861248297341', account: '1244586124829731', money: 0, debt: 0},
+{ firstName: 'Agencja3', lastName: 'Afrodyta', password: '5856', username: '12445861248297321', account: '12445861248297321', money: 0, debt: 0},
+{ firstName: 'Agencja4', lastName: 'Afrodyta', password: '5856', username: '12445861248297312', account: '12445861248297312', money: 0, debt: 0},
+{ firstName: 'Agencja5', lastName: 'Afrodyta', password: '5856', username: '12445861248292731', account: '12445861248292731', money: 0, debt: 0},
 
+{ firstName: 'Tomek', lastName: 'Testy', password: '1', username: '1', account: '1', money: 0, debt: 0},
 ]

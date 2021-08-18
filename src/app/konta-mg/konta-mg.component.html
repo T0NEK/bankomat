@@ -2,33 +2,52 @@
 <div class="naglowki linia1" style="padding: 8px;" ><strong>Konta w Bazie</strong></div>
 <button type="button" class="btn btn-primary btn-sm naglowki" (click)="GetKonta();">Wczytaj ({{stankonta}})</button>
   <div class="naglowek">
-    <div class="naglowki linia1">&nbsp;KONTO</div>
+    <div class="naglowki linia0">&nbsp;KONTO</div>
+    <div class="naglowki linia1">&nbsp;WŁAŚCICIEL</div>
     <div class="naglowki linia2">SALDO&nbsp;</div>
     <div class="naglowki linia2">DEBET&nbsp;</div>
     <div class="naglowki linia2">DOSTĘPNE&nbsp;</div>
   </div>  
   <div class="naglowek historia">
-    <div *ngFor="let pozycje of tabelaOk">
-      <div class="linia linia1">&nbsp;{{pozycje.imie}} {{pozycje.nazwisko}} </div>
-      <div class="linia linia2">{{pozycje.saldo | currency:" "}} zł&nbsp;</div>
-      <div class="linia linia2">{{pozycje.debet | currency:" "}} zł&nbsp;</div>
-      <div class="linia linia2">{{pozycje.saldo - pozycje.debet | currency:" "}} zł&nbsp;</div>
+    <div *ngFor="let pozycja of tabelaOk">
+      <div class="linia linia0">&nbsp;{{pozycja.account}}</div>
+      <div class="linia linia1">{{pozycja.firstName}} {{pozycja.lastName}} </div>
+      <div class="linia linia2">{{pozycja.money | currency:" "}} zł&nbsp;</div>
+      <div class="linia linia2">{{pozycja.debt | currency:" "}} zł&nbsp;</div>
+      <div class="linia linia2">{{pozycja.money - pozycja.debt | currency:" "}} zł&nbsp;</div>
   </div>
   </div>
 <div class="naglowki linia1" style="padding: 8px;" ><strong>Konta Brakujące w Bazie</strong></div>
-  <div class="naglowek historia">
+<div class="naglowki">{{zakladamkonto}}</div>
+<div class="naglowek">
+  <div class="naglowki linia0">&nbsp;KONTO</div>
+  <div class="naglowki linia1">&nbsp;WŁAŚCICIEL</div>
+  <div class="naglowki linia2">SALDO&nbsp;</div>
+  <div class="naglowki linia2">DEBET&nbsp;</div>
+  <div class="naglowki linia2">DOSTĘPNE&nbsp;</div>
+</div>  
+<div class="naglowek historia">
   <div *ngFor="let pozycja of tabelaBrak" >
-    <div class="linia linia1">&nbsp;{{pozycje.imie}} {{pozycje.nazwisko}} </div>
-    <div class="linia linia2">{{pozycje.saldo | currency:" "}} zł&nbsp;</div>
-    <div class="linia linia2">{{pozycje.debet | currency:" "}} zł&nbsp;</div>
-    <div class="linia linia2">{{pozycje.saldo - pozycje.debet | currency:" "}} zł&nbsp;</div></div>
+    <div class="linia linia0">&nbsp;{{pozycja.account}}</div>
+    <div class="linia linia1">&nbsp;{{pozycja.firstName}} {{pozycja.lastName}}  <span class="btn-primary btn-sm naglowki" (click)="Dodaj(pozycja)">DODAJ </span></div>
+    <div class="linia linia2">{{pozycja.money | currency:" "}} zł&nbsp;</div>
+    <div class="linia linia2">{{pozycja.debt | currency:" "}} zł&nbsp;</div>
+    <div class="linia linia2">{{pozycja.money - pozycja.debt | currency:" "}} zł&nbsp;</div></div>
 </div>
 <div class="naglowki linia1" style="padding: 8px;" ><strong>Konta Dodane</strong></div>
-  <div class="naglowek historia">
+<div class="naglowek">
+  <div class="naglowki linia0">&nbsp;KONTO</div>
+  <div class="naglowki linia1">&nbsp;WŁAŚCICIEL</div>
+  <div class="naglowki linia2">SALDO&nbsp;</div>
+  <div class="naglowki linia2">DEBET&nbsp;</div>
+  <div class="naglowki linia2">DOSTĘPNE&nbsp;</div>
+</div>  
+<div class="naglowek historia">
   <div *ngFor="let pozycja of tabelaDodatkowe" >
-    <div class="linia linia1">&nbsp;{{pozycje.imie}} {{pozycje.nazwisko}} </div>
-    <div class="linia linia2">{{pozycje.saldo | currency:" "}} zł&nbsp;</div>
-    <div class="linia linia2">{{pozycje.debet | currency:" "}} zł&nbsp;</div>
-    <div class="linia linia2">{{pozycje.saldo - pozycje.debet | currency:" "}} zł&nbsp;</div>
+    <div class="linia linia0">&nbsp;{{pozycja.account}}</div>
+    <div class="linia linia1">&nbsp;{{pozycja.firstName}} {{pozycja.lastName}}</div>
+    <div class="linia linia2">{{pozycja.money | currency:" "}} zł&nbsp;</div>
+    <div class="linia linia2">{{pozycja.debt | currency:" "}} zł&nbsp;</div>
+    <div class="linia linia2">{{pozycja.money - pozycja.debt | currency:" "}} zł&nbsp;</div>
   </div>
 </div>

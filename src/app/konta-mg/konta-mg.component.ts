@@ -11,15 +11,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./konta-mg.component.css']
 })
 
+
 export class KontaMgComponent implements OnInit {
 
   stankonta = 'czekam';
-  filtrKontaOk = '';
+  zakladamkonto  = '';
   pozycje: any;
   konta = Rachunki;
-  tabelaBrak: Array<{imie: string, nazwisko: string, debet: number, saldo: number}> = [];
-  tabelaDodatkowe: Array<{imie: string, nazwisko: string, debet: number, saldo: number}> = [];
-  tabelaOk: Array<{imie: string, nazwisko: string, debet: number, saldo: number}> = [];
+  tabelaBrak: Array<Konto> = [];
+  tabelaDodatkowe: Array<Konto> = [];
+  tabelaOk: Array<Konto> = [];
   
  
   constructor(private zmienne : ZmienneGlobalneService, private router: Router)
@@ -43,6 +44,58 @@ ngOnInit()
     }
   }
 
+
+Dodaj(pozycja: Konto)
+{
+ let ok = false;  
+if (pozycja.firstName != '' )
+  {
+    if (pozycja.lastName != '' )
+    {
+      if (pozycja.password != '' )
+      {
+        if (pozycja.account != '' )
+        {
+          if (pozycja.username == '' )
+          {
+            pozycja.username = 'założył MG';
+          }
+          if (pozycja.debt <= 0 )
+            {
+              ok = true;
+              this.AddRachunekNew(pozycja)
+            }
+        }
+      }
+    }
+  }
+  if (ok) { this.zakladamkonto = 'zakładam konto: ' + pozycja.account + ' dla: ' + pozycja.firstName + ' ' + pozycja.lastName;}
+  else { this.zakladamkonto = 'nieprawidłowe dane'}
+}
+  
+
+AddRachunekNew(pozycja: Konto)
+{
+  const headers = {
+    'Content-Type': 'application/json',
+    'accept': 'application/json',
+     'Authorization': 'Bearer ' + this.zmienne.getOsobaToken() 
+  }
+  
+  axios.post( this.zmienne.getURL() + 'registration' , pozycja, { headers }
+    )
+    .then(response => {
+      this.zakladamkonto = pozycja.account + ' dla: ' + pozycja.firstName + ' ' + pozycja.lastName + ' - założone';
+      this.GetKonta();
+    }
+    )
+    .catch(error => {
+      this.zakladamkonto = pozycja.account + ' dla: ' + pozycja.firstName + ' ' + pozycja.lastName +  ' - problem ' +  error;
+    }
+    );
+
+}  
+
 SprawdzKonta()
 {
   this.tabelaBrak.splice(0);
@@ -56,17 +109,18 @@ for (let index_dane = 0; index_dane < this.konta.length; index_dane++)
       const el_baza = this.pozycje[index_baza];
       if (el_dane.account == el_baza.account) 
         { jest = true;
-          this.tabelaOk.push({imie: el_dane.firstName, nazwisko: el_dane.lastName, debet: el_dane.debt, saldo: el_dane.money})
+          this.tabelaOk.push({account: el_dane.account, firstName: el_dane.firstName, lastName: el_dane.lastName, debt: el_dane.debt, money: el_dane.money, password: el_dane.password, username: el_dane.username})
           break 
         }
     }
     if (!jest)
-     { this.tabelaBrak.push({imie: el_dane.firstName, nazwisko: el_dane.lastName, debet: el_dane.debt, saldo: el_dane.money} )}
+     { this.tabelaBrak.push({account: el_dane.account, firstName: el_dane.firstName, lastName: el_dane.lastName, debt: el_dane.debt, money: el_dane.money, password: el_dane.password, username: el_dane.username} )}
   } 
   this.tabelaDodatkowe.splice(0);
 for (let index_dane = 0; index_dane < this.pozycje.length; index_dane++) 
   { 
     const el_dane = this.pozycje[index_dane];
+    console.log(el_dane)
     let jest = false;
     for (let index_baza = 0; index_baza < this.konta.length; index_baza++) 
     {
@@ -77,7 +131,7 @@ for (let index_dane = 0; index_dane < this.pozycje.length; index_dane++)
         }
     }
     if (!jest)
-     { this.tabelaDodatkowe.push( {imie: el_dane.firstName, nazwisko: el_dane.lastName, debet: el_dane.debt, saldo: el_dane.money} )}
+     { this.tabelaDodatkowe.push({account: el_dane.account, firstName: el_dane.firstName, lastName: el_dane.lastName, debt: el_dane.debt, money: el_dane.money, password: el_dane.password, username: el_dane.username})}
   } 
 }
 
@@ -100,8 +154,7 @@ instance.get( '/accounts'
   this.stankonta = 'wczytane';
   this.SprawdzKonta();
   })
-  .catch(error => { 
-  console.log(error)      
+  .catch(error => {    
   this.stankonta = 'problem ' + error;  
      }
   );
