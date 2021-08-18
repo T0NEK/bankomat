@@ -2,14 +2,20 @@
 {
     padding-top: 1vh;
     padding-left: 1vw;
+    padding-right: 1vw;
     width: 100%;
 }
-.historia
+.historia,.historia1
 {
 overflow-y: visible;
 overflow-x: hidden;
-height: 19%;
-max-height: 19%;
+height: 20%;
+max-height: 20%;
+}
+.historia1
+{
+height: 30%;
+max-height: 30%;
 }
 .naglowek
 {

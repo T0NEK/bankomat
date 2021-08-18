@@ -135,8 +135,8 @@ const Puste: Przycisk[] = [
 
 const Start: Przycisk[] = [
     {kolejny: 0, jezyk: 1, tekst: ['Start'], dostep:  '', dzialanie: 'jezyki'},
-    {kolejny: 0, jezyk: 1, tekst: ['Konta'], dostep: '', dzialanie: 'konta-mg'},
-    {kolejny: 0, jezyk: 1, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
+    {kolejny: 13, jezyk: 1, tekst: ['Konta'], dostep: '', dzialanie: 'konta-mg'},
+    {kolejny: 13, jezyk: 1, tekst: ['Dodaj konto'], dostep: '', dzialanie: 'konta-new-mg'},
     {kolejny: 0, jezyk: 1, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
     {kolejny: 0, jezyk: 1, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},
     {kolejny: 0, jezyk: 1, tekst: [''], dostep: 'disabled', dzialanie: 'jezyki'},

@@ -26,10 +26,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StartBANK0MATComponent } from './startBANK0MAT/startBANK0MAT.component';
 import { LogowanieMgComponent } from './logowanie-mg/logowanie-mg.component';
 import { KontaMgComponent } from './konta-mg/konta-mg.component';
+import { KontaNewMgComponent } from './konta-new-mg/konta-new-mg.component';
 
 
 @NgModule({
-  declarations: [																											
+  declarations: [																												
     AppComponent,
     StanKontaComponent,
       JezykiComponent,
@@ -50,7 +51,8 @@ import { KontaMgComponent } from './konta-mg/konta-mg.component';
       KlawiszeComponent,
       StartBANK0MATComponent,
       LogowanieMgComponent,
-      KontaMgComponent
+      KontaMgComponent,
+      KontaNewMgComponent
    ],
   imports: [
     BrowserModule,

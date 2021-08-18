@@ -1,0 +1,9 @@
+<div>NOWE KONTO</div>
+Imię <input type="text" class="form-control"  #FN (keyup)="onKeyFN(FN.value)">
+Nazwisko<input type="text" class="form-control"  #LN (keyup)="onKeyLN(LN.value)">
+Hasło<input type="text" class="form-control"  #Pa (keyup)="onKeyPa(Pa.value)">
+Konto<input type="text" class="form-control"  #Ac (keyup)="onKeyAc(Ac.value)">
+Login (jak pusty = konto)<input type="text" class="form-control"  #Us (keyup)="onKeyUs(Us.value)">
+Stan konta<input type="number" class="form-control"  #Mo (keyup)="onKeyMo(Mo.value)">
+Debet (z minusem)<input type="number" class="form-control" #Db (keyup)="onKeyDb(Db.value)">
+<button type="button" class="btn btn-primary btn-sm" (click)="Dodaj()">Dodaj konto: {{stankonta}}</button>
