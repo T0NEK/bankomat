@@ -11,14 +11,17 @@ import { Router } from '@angular/router';
 })
 export class KontaNewMgComponent implements OnInit {
 
-  widocznoscKonta = 'hidden';
   stankonta = '';
-  zakladamkonto = '';
-  pozycje: any;
   konta = Rachunki;
-  tabelaOk: Array<any> = [];
-  tabelaBrak: Array<any> = [];
-  tabelaDodatkowe: Array<any> = [];
+  pozycja =  {
+    firstName: '',
+    lastName: '',
+    password: '',
+    account: '',
+    username: '',
+    money: 0,
+    debt: 0,
+  }
 
   constructor(private zmienne : ZmienneGlobalneService, private router: Router)
   {
@@ -41,41 +44,41 @@ export class KontaNewMgComponent implements OnInit {
   }
 
 
-onKeyFN(value: string) { this.firstName = value;this.zakladamkonto = 'czekam';}
-onKeyLN(value: string) { this.lastName = value;this.zakladamkonto = 'czekam';}
-onKeyPa(value: string) { this.password = value;this.zakladamkonto = 'czekam';}
-onKeyAc(value: string) { this.account = value;this.zakladamkonto = 'czekam';}
-onKeyUs(value: string) { this.username = value;this.zakladamkonto = 'czekam';}
-onKeyMo(value: string) { this.money = Number(value);this.zakladamkonto = 'czekam';}
-onKeyDb(value: string) { this.debt = Number(value);this.zakladamkonto = 'czekam';}
+onKeyFN(value: string) { this.pozycja.firstName = value}
+onKeyLN(value: string) { this.pozycja.lastName = value}
+onKeyPa(value: string) { this.pozycja.password = value}
+onKeyAc(value: string) { this.pozycja.account = value}
+onKeyUs(value: string) { this.pozycja.username = value}
+onKeyMo(value: string) { this.pozycja.money = Number(value)}
+onKeyDb(value: string) { this.pozycja.debt = Number(value)}
 
 
-Dodaj(pozycja: Konto)
+Dodaj()
 {
  let ok = false;  
-if (pozycja.firstName != '' )
+if (this.pozycja.firstName != '' )
   {
-    if (pozycja.lastName != '' )
+    if (this.pozycja.lastName != '' )
     {
-      if (pozycja.password != '' )
+      if (this.pozycja.password != '' )
       {
-        if (pozycja.account != '' )
+        if (this.pozycja.account != '' )
         {
-          if (pozycja.username == '' )
+          if (this.pozycja.username == '' )
           {
-            pozycja.username = 'założył MG';
+            this.pozycja.username = 'założył MG';
           }
-          if (pozycja.debt <= 0 )
+          if (this.pozycja.debt <= 0 )
             {
               ok = true;
-              this.AddRachunekNew(pozycja)
+              this.AddRachunekNew(this.pozycja)
             }
         }
       }
     }
   }
-  if (ok) { this.zakladamkonto = 'zakładam konto: ' + pozycja.account + ' dla: ' + pozycja.firstName + ' ' + pozycja.lastName;}
-  else { this.zakladamkonto = 'nieprawidłowe dane'}
+  if (ok) { this.stankonta = 'zakładam konto: ' + this.pozycja.account + ' dla: ' + this.pozycja.firstName + ' ' + this.pozycja.lastName;}
+  else { this.stankonta = 'nieprawidłowe dane'}
 }
 
 
@@ -90,11 +93,11 @@ AddRachunekNew(pozycja: Konto)
   axios.post( this.zmienne.getURL() + 'registration' , pozycja, { headers }
     )
     .then(response => {
-      this.zakladamkonto = pozycja.account + ' dla: ' + pozycja.firstName + ' ' + pozycja.lastName + ' - założone';
+      this.stankonta = pozycja.account + ' dla: ' + pozycja.firstName + ' ' + pozycja.lastName + ' - założone';
     }
     )
     .catch(error => {
-      this.zakladamkonto = pozycja.account + ' dla: ' + pozycja.firstName + ' ' + pozycja.lastName +  ' - problem ' +  error;
+      this.stankonta = pozycja.account + ' dla: ' + pozycja.firstName + ' ' + pozycja.lastName +  ' - problem ' +  error;
     }
     );
   }
