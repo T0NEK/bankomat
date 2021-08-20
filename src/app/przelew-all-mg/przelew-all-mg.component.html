@@ -1,0 +1,36 @@
+<h4>Przelew</h4>
+<button type="button" class="btn btn-primary btn-sm naglowki" (click)="GetKonta();">Wczytaj</button>
+<div class="naglowki" style="padding: 8px;" >({{stankonta}})</div>
+<div>Nadawca
+  <select #nadawca class="form-control" (change)="callW(nadawca.value)">
+    <option *ngFor="let pozycja of tabelaOk" [value]="pozycja.account">
+      <span>({{pozycja.account}}) {{pozycja.firstName}} {{pozycja.lastName}} {{pozycja.account == pozycja.username ? ' ' : '('+pozycja.username+')'}}</span>
+    </option>   
+  </select>
+ <div> Konto:  {{wysylajacy}}</div>
+ <div>
+  Pin
+  <input type="text" class="form-control"  #Pin (keyup)="onKeyPin(Pin.value)">
+   Pin: {{pinwysylajacy}}
+</div>      
+</div>
+<div>Odbiorca
+  <select #odbiorca class="form-control" (change)="callO(odbiorca.value)">
+    <option *ngFor="let pozycja of tabelaOk" [value]="pozycja.account">
+      <span>({{pozycja.account}}) {{pozycja.firstName}} {{pozycja.lastName}} {{pozycja.password}}</span>
+    </option>   
+  </select>
+  Konto:  {{odbierajacy}}
+</div>
+<div>
+Wartość przelewu
+<input type="number" class="form-control"  #Kwota (keyup)="onKeyKwota(Kwota.value)">
+ Kwota {{kwota}}
+</div>      
+<div>
+  Tytuł przelewu
+  <input type="text" class="form-control"  #Tytul (keyup)="onKeyTytul(Tytul.value)">
+   Tytuł {{tytul}}
+</div>      
+<button type="button" class="btn btn-primary btn-sm naglowki" (click)="Przelew();">Wykonaj przelew</button>
+<div class="naglowki" style="padding: 8px;" >({{przelano}})</div>

@@ -2,50 +2,7 @@
 
 <div> <strong>Logowanie:</strong> {{stan}} </div>
 
-<div (click)="DodajKonta()"> <strong>Dodaj konta:</strong> {{zakladamkonta}} </div>
-<div>NOWE KONTO</div>
-Imię <input type="text" class="form-control"  #FN (keyup)="onKeyFN(FN.value)">
-Nazwisko<input type="text" class="form-control"  #LN (keyup)="onKeyLN(LN.value)">
-Hasło<input type="text" class="form-control"  #Pa (keyup)="onKeyPa(Pa.value)">
-Konto<input type="text" class="form-control"  #Ac (keyup)="onKeyAc(Ac.value)">
-Login (jak pusty = konto)<input type="text" class="form-control"  #Us (keyup)="onKeyUs(Us.value)">
-Stan konta<input type="number" class="form-control"  #Mo (keyup)="onKeyMo(Mo.value)">
-Debet (z minusem)<input type="number" class="form-control" #Db (keyup)="onKeyDb(Db.value)">
-<div (click)="AddNewRachunek()"> <strong>Dodaj konto:</strong>{{zakladamkonto}}</div>
 
-<h4>Przelew</h4>
-<div>Nadawca
-  <select #nadawca class="form-control" (change)="callW(nadawca.value)">
-    <option *ngFor="let pozycja of pozycje" [value]="pozycja.account">
-      <span>{{pozycja.firstName}} {{pozycja.lastName}}</span>
-    </option>   
-  </select>
- <div> Konto:  {{wysylajacy}}</div>
- <div>
-  Pin
-  <input type="text" class="form-control"  #Pin (keyup)="onKeyPin(Pin.value)">
-   Pin: {{pinwysylajacy}}
-</div>      
-</div>
-<div>Odbiorca
-  <select #odbiorca class="form-control" (change)="callO(odbiorca.value)">
-    <option *ngFor="let pozycja of pozycje" [value]="pozycja.account">
-      <span>{{pozycja.firstName}} {{pozycja.lastName}}</span>
-    </option>   
-  </select>
-  Konto:  {{odbierajacy}}
-</div>
-<div>
-Wartość przelewu
-<input type="number" class="form-control"  #Kwota (keyup)="onKeyKwota(Kwota.value)">
- Kwota {{kwota}}
-</div>      
-<div>
-  Tytuł przelewu
-  <input type="text" class="form-control"  #Tytul (keyup)="onKeyTytul(Tytul.value)">
-   Tytuł {{tytul}}
-</div>      
-<div (click)="Przelew()"><strong>Wykonaj przelew</strong>{{przelano}}</div>
 
 <div>.</div>
 <div>..</div>

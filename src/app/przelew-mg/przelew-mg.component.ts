@@ -207,7 +207,7 @@ AddRachunek()
     "firstName": "brak danych",
     "lastName": "brak danych",
     "password": "5856",
-    "username": 'założył: ' + this.zmienne.getOsobaNazwisko() + ' ' + this.zmienne.getOsobaNazwisko,
+    "username": 'założył: ' + this.zmienne.getOsobaNazwisko() + ' ' + this.zmienne.getOsobaImie(),
     "account": this.zmienne.getOdbiorcaKonto(),
     "money": 0,
     "debt": 0
