@@ -17,20 +17,11 @@ export class PrzelewAllMgComponent implements OnInit {
   pozycje: any;
   konta = Rachunki;
   tabelaOk: Array<Konto> = [];
-  firstName = '';
-  lastName = '';
-  password = '';
-  username = '';
-  account= '';
-  money= 0;
-  debt= 0;
-  pin = '';
   wysylajacy = '';
-  pinwysylajacy = '';
   odbierajacy = '';
   kwota = 0;
   tytul = '';
-  przelano = 'czekam';
+  przelano = 'uzupełnij dane';
   token = '';
   idwysylajacy = 0;
 
@@ -59,11 +50,15 @@ callW(value: string) { this.wysylajacy = value; }
 callO(value: string) { this.odbierajacy = value; }
 onKeyKwota(value: string) { this.kwota = Number(value);}
 onKeyTytul(value: string) { this.tytul = value;}
-onKeyPin(value: string) { this.pinwysylajacy = value}
 
 
 Przelew()
 {
+  console.log(this.wysylajacy)
+  console.log(this.odbierajacy)
+  console.log(this.kwota)
+  console.log(this.tytul)
+  
 if ((this.wysylajacy != '')&&(this.odbierajacy != '')&&(this.kwota >= 0)&&(this.tytul != '')&&(this.wysylajacy != this.odbierajacy))
 {
   this.zaloguj()
@@ -78,8 +73,11 @@ zaloguj()
   }
   const data = {
     "username": this.wysylajacy,
-    "password": this.pinwysylajacy
+    "password": this.GetPin(this.wysylajacy)
   }
+  console.log(this.wysylajacy)
+  console.log(this.GetPin(this.wysylajacy))
+
   axios.post( this.zmienne.getURL() + 'auth'  , data
   )
   .then(response => {
@@ -121,6 +119,20 @@ przelej()
   });
 }  
 
+GetPin(konto: string): string
+{
+  let pin = '5856'
+  for (let index_dane = 0; index_dane < this.tabelaOk.length; index_dane++) 
+  { 
+    const el_baza = this.tabelaOk[index_dane];
+    if (konto == el_baza.account) 
+    {
+      pin = el_baza.password;
+      break
+    }
+  }
+  return pin;
+}
 
 SprawdzKonta()
 {
@@ -172,7 +184,7 @@ const instance = axios.create({
 instance.get( '/accounts'
  ).then(response => {
   this.pozycje = response.data;
-  this.stankonta = 'wczytane';
+  this.stankonta = 'zaktualizowane';
   this.SprawdzKonta();
   })
   .catch(error => {    

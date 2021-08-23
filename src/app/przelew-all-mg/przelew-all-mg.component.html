@@ -1,21 +1,18 @@
 <h4>Przelew</h4>
-<button type="button" class="btn btn-primary btn-sm naglowki" (click)="GetKonta();">Wczytaj</button>
+<button type="button" class="btn btn-primary btn-sm naglowki" (click)="GetKonta();">Aktualizuj użytkowników</button>
 <div class="naglowki" style="padding: 8px;" >({{stankonta}})</div>
 <div>Nadawca
-  <select #nadawca class="form-control" (change)="callW(nadawca.value)">
+  <select #nadawca class="form-control" (change)="callW(nadawca.value)" required>
+    <option value="">wybierz</option>
     <option *ngFor="let pozycja of tabelaOk" [value]="pozycja.account">
       <span>({{pozycja.account}}) {{pozycja.firstName}} {{pozycja.lastName}} {{pozycja.account == pozycja.username ? ' ' : '('+pozycja.username+')'}}</span>
     </option>   
   </select>
  <div> Konto:  {{wysylajacy}}</div>
- <div>
-  Pin
-  <input type="text" class="form-control"  #Pin (keyup)="onKeyPin(Pin.value)">
-   Pin: {{pinwysylajacy}}
-</div>      
-</div>
+ </div>
 <div>Odbiorca
-  <select #odbiorca class="form-control" (change)="callO(odbiorca.value)">
+  <select #odbiorca class="form-control" (change)="callO(odbiorca.value)" required>
+    <option value="">wybierz</option>
     <option *ngFor="let pozycja of tabelaOk" [value]="pozycja.account">
       <span>({{pozycja.account}}) {{pozycja.firstName}} {{pozycja.lastName}} {{pozycja.password}}</span>
     </option>   
