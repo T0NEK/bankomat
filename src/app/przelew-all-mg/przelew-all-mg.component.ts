@@ -4,6 +4,19 @@ import { ZmienneGlobalneService } from '../ZmienneGlobalne.service';
 import { Konto, Rachunki } from '../konta';
 import { Router } from '@angular/router';
 
+interface Pozycja 
+{
+toAccount: string,
+toName: string,
+fromAccount: string,
+fromName: string,
+amount: number,
+accountPostTransaction: number,
+operationType: string;
+description: string
+}
+
+
 @Component({
   selector: 'app-przelew-all-mg',
   templateUrl: './przelew-all-mg.component.html',
@@ -15,6 +28,7 @@ export class PrzelewAllMgComponent implements OnInit {
 
   stankonta = '';
   pozycje: any;
+  przelewy: Array<Pozycja> = [];
   konta = Rachunki;
   tabelaOk: Array<Konto> = [];
   wysylajacy = '';
@@ -58,7 +72,7 @@ Przelew()
   console.log(this.odbierajacy)
   console.log(this.kwota)
   console.log(this.tytul)
-  
+
 if ((this.wysylajacy != '')&&(this.odbierajacy != '')&&(this.kwota >= 0)&&(this.tytul != '')&&(this.wysylajacy != this.odbierajacy))
 {
   this.zaloguj()
@@ -111,6 +125,16 @@ przelej()
   )
   .then(response => {
     this.przelano = 'wykonano przelew'
+    this.przelewy.unshift(
+      {'toAccount': this.odbierajacy,
+      'toName': '',
+      'fromAccount': '',
+      'fromName': '',
+      'amount': this.kwota,
+      'accountPostTransaction': response.data.accountPostTransaction,
+      'operationType': '',
+      'description': ''}
+      )
 
   }
   )

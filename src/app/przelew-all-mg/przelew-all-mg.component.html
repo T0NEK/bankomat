@@ -31,3 +31,15 @@ Wartość przelewu
 </div>      
 <button type="button" class="btn btn-primary btn-sm naglowki" (click)="Przelew();">Wykonaj przelew</button>
 <div class="naglowki" style="padding: 8px;" >({{przelano}})</div>
+<div class="historia">
+  Historia przelewów
+<div *ngFor="let pozycja of przelewy" [ngSwitch]="pozycja.operationType">
+  <span *ngSwitchCase="'PayOut'"><span class="kol20c">wypłata</span></span>  
+  <span *ngSwitchCase="'PayIn'"><span class="kol20c">wpłata</span></span>  
+  <span *ngSwitchCase="'Out'"><span class="kol20c">przelew </span></span>  
+  <span *ngSwitchCase="'In'"><span class="kol20c">przychód</span></span>
+  <span *ngSwitchDefoult><span class="kol1"></span></span>  
+   <span class="kol20r {{((pozycja.operationType == 'Out')||(pozycja.operationType == 'PayOut')) ? 'red':''}}">{{pozycja.amount | currency:' '}} zł.&nbsp;&nbsp;</span>
+  <span class="kol20r">{{pozycja.accountPostTransaction | currency:' '}} zł.&nbsp;&nbsp;</span>
+</div>
+</div>

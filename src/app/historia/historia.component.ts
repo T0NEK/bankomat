@@ -4,17 +4,6 @@ import { ZmienneGlobalneService } from '../ZmienneGlobalne.service';
 import { Router } from '@angular/router';
 import axios from 'axios';
 
-interface pozycja 
-{
-toAccount: string,
-toName: string,
-fromAccount: string,
-fromName: string,
-amount: number,
-accountPostTransaction: number,
-operationType: string;
-description: string
-}
 
 
 @Component({
